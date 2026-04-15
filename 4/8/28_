@@ -1,0 +1,8 @@
+let bts1 = ["진", "슈가", "제이홉", "RM"];
+console.log(bts1);
+let bts2 = new Array("지민", "뷔", "정국");
+console.log(bts2);
+console.log(bts1.indexOf("슈가")); //몇번째
+console.log(bts2.indexOf("슈가"));
+console.log(bts1.includes("RM")); //포함
+console.log(bts2.includes("지민"));

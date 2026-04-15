@@ -1,0 +1,35 @@
+//기존 회원가입에서 코드가 추가됌
+// DB length 가 커지면 resolve
+const DB = [];
+function saveDB(user) {
+  const oldDBLength = DB.length;
+  DB.push(user);
+  console.log(`${user.uname}저장 완료되었습니다`);
+
+  if (DB.length > oldDBLength) {
+    return Promise.resolve(user);
+  } else {
+    return Promise.reject(new Error("저장이 실패했습니다!"));
+  }
+}
+
+function sendEmail(user) {
+  console.log(`${user.email}으로 이메일을 발송했습니다.`);
+  return Promise.resolve(user);
+}
+
+function getResult(user) {
+  return Promise.resolve(`${user.uname}님 등록 성공하였습니다.`);
+}
+
+function registerByPromise(user) {
+  const result = saveDB(user)
+    .then(sendEmail)
+    .then(getResult)
+    .catch((error) => new Error(error));
+  //catch 여러개 넣을수있음 각각위치에 넣어줌(자기앞에것만 처리함)뒤에건 실행되지않음
+  return result;
+}
+const myUser = { uname: "손흥민", email: "son@naver.com" };
+const result = registerByPromise(myUser);
+result.then(console.log);

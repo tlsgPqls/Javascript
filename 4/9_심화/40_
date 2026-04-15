@@ -1,0 +1,13 @@
+// 단축 평가
+// 앞쪽이 트루이면 뒤쪽이 반환, 폴스이면 그냥 앞쪽 반환
+// or 은 반대 앞쪽이 트루면 전체가 트루, 앞쪽이 폴스면 뒤쪽이 반환
+
+//예제 단축평가
+let userName = "";
+let displayName = userName || "Guest";
+
+console.log(displayName);
+
+userName = "Wizard"; //true
+displayName = userName || "Guest";
+console.log(displayName);

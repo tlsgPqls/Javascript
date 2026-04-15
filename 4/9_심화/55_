@@ -1,0 +1,25 @@
+const promise = new Promise((resolve, reject) => {
+  const success = true;
+  if (success) {
+    resolve("작업 성공!");
+  } else {
+    reject("작업 실패!");
+  }
+});
+promise
+  .then((result) => {
+    console.log("성공 결과:", result);
+  })
+  .catch((error) => {
+    console.log("실패 결과:", error);
+  });
+
+const p = new Promise((resolve) => {
+  console.log("1. Promise 실행");
+  resolve(10);
+});
+console.log("2. 코드 계속 실행");
+p.then((num) => {
+  //num = 10
+  console.log("3. then 실행:", num);
+});

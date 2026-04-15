@@ -1,0 +1,11 @@
+// Promise 체이닝
+//promise 는 promise 를 반환함
+const p1 = new Promise((resolve) => {
+  const result = 10;
+  resolve(result);
+});
+const p2 = p1.then((num) => num + 1);
+
+p2.then((num) => console.log(num));
+p1.then((num) => num + 1).then((num) => console.log(num));
+//앞쪽에서 처리해서 뒷쪽으로 넘겨주고

@@ -1,0 +1,13 @@
+//function return
+function sayHello2(name) {
+  return `Hello${name}`;
+}
+let greeting = sayHello2("RM");
+console.log(greeting);
+console.log(sayHello2("Morning"));
+
+function add(num1, num2) {
+  return num1 + num2;
+}
+let result = add(5, 6);
+console.log(result);

@@ -1,0 +1,14 @@
+//고차원 함수 map은 함수를 인자로 받음 / 아이템 하나하나에 조작을 가한다
+const nums = [1, 2, 3, 4, 5];
+const doubled = nums.map((nums) => {
+  return nums * 2;
+});
+console.log(doubled);
+
+const evenNumbers = nums.filter((num) => {
+  return num % 2 === 0;
+});
+console.log(evenNumbers);
+const Num3 = nums.filter((num) => {
+  return num % 3 == 0;
+});

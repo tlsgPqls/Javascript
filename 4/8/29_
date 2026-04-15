@@ -1,0 +1,34 @@
+//Array 활용
+//shift 는 입구랑 출구가 다름
+let bts1 = ["진", "슈가", "제이홉", "RM"];
+console.log(bts1);
+let bts2 = new Array("지민", "뷔", "정국");
+
+bts1.push("박보검");
+console.log(bts1);
+console.log(bts1.length);
+bts1.unshift("이도현");
+console.log(bts1);
+
+let first = bts1.shift();
+console.log(bts1);
+console.log(first);
+let last = bts1.pop();
+console.log(last);
+console.log(bts1);
+
+const deleted = bts1.splice(1, 1);
+console.log(bts1);
+console.log(deleted);
+//특정한 index에서 추가 splice(index, 0, item, item,...)
+bts1.splice(1, 0, "박보검", "이도현");
+console.log(bts1);
+console.log("===========3===========");
+const bts = bts1.concat(bts2);
+console.log(bts);
+console.log("===========4===========");
+const rbts = bts.reverse();
+console.log(rbts);
+console.log("===========5===========");
+let members = bts.join(",");
+console.log(members);

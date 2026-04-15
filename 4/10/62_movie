@@ -1,0 +1,80 @@
+/* promise 영화정보
+// https://raw.githubusercontent.com/wapj/jsbackend/main/movieinfo.json
+// javascript object location -json
+// [] = 배열, 안에 객체
+// 영화정보를 보여줌
+// pharsing 할거임 랭킹별로 보여주는걸 만들거임
+// Http 요청과 응답으로 구성
+// / fetch : url - request -> response 생성 - fetch:resolve,response 로 구성
+// - promise 로 반환 - response 받음
+// response - header, body 로 구성
+// then. response.json - > return
+ error - catch / fetch 시 문제가 발생하는 부분을 잡음 */
+const url =
+  "http://raw.githubusercontent.com/wapj/jsbackend/main/movieinfo.json";
+fetch(url)
+  .then((response) => {
+    //response 전달
+    return response.json(); //Promise.resolve(res.json())
+  })
+  .catch(() => {
+    console.log("요청에 실패하였습니다.");
+    //.catch((e))=> console.log(e.message + '해서 요청에 실패했습니다.')
+    //자세한 내용 e - e.message + '해서 요청에 실패했습니다.'
+  })
+  .then((data) => {
+    //res.json값이 옴
+    if (!data) {
+      throw new Error("데이터가 없습니다.");
+    }
+    if (!data.articleList || data.articleList.length === 0) {
+      throw new Error("데이터가 없습니다.");
+    }
+    return data.articleList; // Promise.resolve(data.articlelist)
+  })
+  .catch((error) => {
+    //예외 - 에러 받음
+    console.log("에러 발생:", error.message);
+  })
+  .then((articleList) => {
+    return articleList.map((article, idx) => {
+      return {
+        title: article.title,
+        rank: idx + 1,
+        authorName: article.authorName,
+      };
+    });
+  }) //Promise.resolve([{title:"",rank:1}...{}])
+
+  .then((results) => {
+    for (let movie of results) {
+      console.log(`[${movie.rank}위] ${movie.title} 작가:${movie.authorName}`);
+    }
+  })
+  .catch((err) => {
+    console.log("<<에러발생>>");
+    console.log(err);
+  });
+/* 
+fetch(url)
+.then((res)=>res.json())
+.catch((e)=>console.log(e.message))
+.then((data)=>{
+    if(!data){
+    throw new Error('not data')
+    }
+    if(!data.articles || data.articleList.length===0){
+    {throw new Error('not data')
+}
+    retrun data.articleList}) // Promise.resolve(data.articleList)
+    .then((articles)=>{
+        return articles.map((articles, index)=>return {title: article.title, rank: index+1}
+})
+    .then((results)=>{
+        for(let movie of results){
+        console.log(`[${movie.rank} 위)] ${movie.title}`)}
+        .catch((err)=>{
+            console.log('error')
+            console.log(err);})
+
+ */

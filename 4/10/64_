@@ -1,0 +1,19 @@
+const DB = [];
+function save2DB(user, callback) {
+  DB.push(user);
+  console.log(`${user.name}님 데이터베이스에 저장 완료되었습니다.`);
+  return callback(user);
+}
+
+async function registerByAsync(user) {
+  try {
+    const savedUser = await save2DB(user);
+    const emailedlUser = await sendEmail(savedUser);
+    const result = getResult(emailedlUser);
+    return result;
+  } catch (error) {
+    return new Error(error);
+  }
+}
+const myUser = { uname: "손흥민", email: "son@naver.com" };
+registerByAsync(myUser).then(console.log);

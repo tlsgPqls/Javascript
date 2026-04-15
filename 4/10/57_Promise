@@ -1,0 +1,22 @@
+// 복습
+const promise = new Promise((resolve, reject) => {
+  const success = true;
+  if (success) {
+    resolve("성공!");
+  } else {
+    resolve("실패");
+  }
+});
+promise
+  .then((result) => console.log("성공결과:", result))
+  .catch((error) => {
+    console.error("실패결과:", error);
+  });
+const p = new Promise((resolve) => {
+  console.log("1.promise 실행");
+  resolve(10);
+});
+console.log("2. 코드 계속");
+p.then((num) => {
+  console.log("3.then 실행", num);
+});

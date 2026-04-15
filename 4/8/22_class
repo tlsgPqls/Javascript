@@ -1,0 +1,13 @@
+// class
+class Person1 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  greet() {
+    console.log("Hello, " + this.name);
+  }
+}
+const person3 = new Person1("dd", 20);
+console.log(person3.age, person3.name);
+person3.greet();

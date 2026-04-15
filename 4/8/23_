@@ -1,0 +1,14 @@
+class Person2 {
+  #idNo; //private 속성 ( 외부 접근x )
+  constructor(name, age, idNo) {
+    this.name = name;
+    this.age = age;
+    this.#idNo = idNo;
+  }
+  getIDNo() {
+    console.log(`idNo:${this.#idNo}`);
+  }
+}
+const person4 = new Person2("dd", 20, "123232");
+console.log(person4);
+person4.getIDNo();

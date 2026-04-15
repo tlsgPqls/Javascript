@@ -1,0 +1,25 @@
+//비동기인데 동기처럼 깔끔하게 짜는 함수
+//promise 로 감싸서 반환
+//await 는 반드시 async 함수 안에서만 사용가능
+async function func1() {
+  //async 를 쓰면 promise 반환
+  return "hello";
+}
+func1().then(console.log);
+
+function func2() {
+  return new Promise((resolve) => {
+    resolve("hello");
+  });
+}
+func2().then(console.log);
+
+async function func1() {
+  //async 를 쓰면 promise 반환
+  return "hello";
+}
+async function func3() {
+  let name = await func1();
+  console.log(name);
+}
+func3();

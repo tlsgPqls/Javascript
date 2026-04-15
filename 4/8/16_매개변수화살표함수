@@ -1,0 +1,12 @@
+function greet1(name, callback) {
+  return callback(name);
+}
+let result;
+result = greet1("선생님", (name) => {
+  return `Hello ${name}`;
+});
+console.log(result);
+
+//return 생략
+result = greet1("깐부", (name) => `Hi ${name}`);
+console.log(result);

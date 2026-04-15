@@ -1,0 +1,18 @@
+//다양한 함수 표현식
+//매개변수 상수에다가 집어넣음 함수명이 필요x
+//익명함수
+function add1(n1, n2) {
+  return n1 + n2;
+}
+console.log(add1(1, 2));
+
+let add2 = function (n1, n2) {
+  return n1 + n2;
+};
+console.log(add2(1, 2));
+
+let add3 = (n1, n2) => {
+  return n1 + n2;
+};
+console.log(add3(1, 2));
+// 백엔드는 콜백함수많이씀

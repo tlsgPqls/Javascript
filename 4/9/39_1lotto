@@ -1,0 +1,25 @@
+//정답지
+function genlotto() {
+  let numbers = [];
+  while (numbers.length < 6) {
+    const num = Math.floor(Math.random() * 45) + 1; //0~1 1포함이 안됌
+    if (!numbers.includes(num)) {
+      numbers.push(num);
+    }
+  }
+  return numbers;
+}
+let result = genlotto().sort((n1, n2) => n1 - n2);
+console.log(result);
+
+console.log("=======================");
+function genlottoWithSet() {
+  let numbers = new Set();
+  while (numbers.size < 6) {
+    const num = Math.floor(Math.random() * 45) + 1;
+    numbers.add(num);
+  }
+  const result = [...numbers];
+  return result.sort((n1, n2) => n1 - n2);
+}
+console.log(genlottoWithSet().join(", "));

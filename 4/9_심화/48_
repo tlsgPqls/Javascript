@@ -1,0 +1,21 @@
+// 문자열 조작
+// 오토박싱 기능 'Hello'.  오토박싱 언박싱
+// startwith 시작하는 위치 - true, false
+// Indexof - 없으면 -1
+// slice - 뒤쪽에서
+// replace - 바꿔치기
+
+const str = "JavaScript";
+console.log(str.length); //10
+console.log(str.toUpperCase()); //대
+console.log(str.toLowerCase()); //소
+console.log(str.includes("Script")); //트루
+console.log(str.includes("java")); //폴스
+console.log(str.startsWith("java")); //폴스
+console.log(str.startsWith("java")); //폴스
+console.log(str.endsWith("Script")); //트루
+console.log(str.indexOf("a")); //1
+console.log(str.indexOf("z")); //-1
+console.log(str.slice(0, 4));
+console.log(str.slice(4));
+console.log(str.replace("Script", "script"));

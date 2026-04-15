@@ -1,0 +1,7 @@
+// and
+let isLoggedIn = true;
+let userProfile = { name: "Alice" };
+
+isLoggedIn && console.log(userProfile.name);
+isLoggedIn = false;
+isLoggedIn && console.log(userProfile.name);

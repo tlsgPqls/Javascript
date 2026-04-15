@@ -1,0 +1,12 @@
+function calc2(n1, n2, callback) {
+  return callback(n1, n2);
+}
+let result;
+result = calc2("학생", "선생", (n1, n2) => {
+  return `Hello, Hello2,${(n1, n2)}`;
+});
+console.log(result);
+result = calc2("gg", "dd", (n1, n2) => `hhi,hhhi, ${(n1, n2)}`);
+console.log(result);
+
+console.log("n1111", "n2222");

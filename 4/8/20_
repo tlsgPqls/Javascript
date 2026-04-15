@@ -1,0 +1,21 @@
+const human = {
+  name: "로키", //객체의 속성
+  age: 30,
+  greet: function () {
+    //객체의 Method
+    //this는 현재의 object 자신을 의미함(호출방식에따라 바뀜)
+    console.log(`안녕 나는 ${this.name}야!`);
+  },
+  goodbye() {
+    //Method 축약표현
+    console.log("goodbye");
+  },
+};
+human.job = "teacher";
+human.info = function () {
+  console.log(`이름은 ${this.name}이고
+직업은 ${this.job}이다. 나이는 ${this.age}살 `);
+};
+human.info();
+delete human.age; //객체속성 삭제
+console.log(human.age);

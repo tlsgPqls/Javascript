@@ -1,0 +1,31 @@
+// New 로 새로운 객체 생성하기 / 프로토타입을 이용한 객체지향
+// * 면접: 프로토타입의 특성에 대해 자주 물어봄
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.greet = function () {
+    console.log(`안녕 나는 ${this.name}야!`);
+  };
+}
+function Student(name, age, grade, sex, race) {
+  this.name = name;
+  this.age = age;
+  this.grade = grade;
+  this.sex = sex;
+  this.race = race;
+}
+const person1 = new Person("양관식", 20);
+
+const person2 = new Person("오애순", 20);
+const student1 = new Student(
+  "디에고",
+  18,
+  "말달리기",
+  "남자",
+  "스틸볼런레이스참여",
+);
+console.log(student1);
+console.log(person1);
+console.log(person2); //메서드를 설명할수있다.
+console.log(person1.name, person1.age);
+person2.greet();

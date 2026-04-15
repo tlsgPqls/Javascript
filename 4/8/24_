@@ -1,0 +1,30 @@
+class Vehicle
+{
+    constructor(speed)
+    {
+        this.speed = speed;
+    }
+    speedUp(){
+        this.speed +=10;
+    }
+    speedDown(){
+        this.speed -=10;
+    }
+    Info(){
+        console.log(`현재 속도는 ${this.speed}입니다.`);
+    }
+}
+const vehicle = new Vehicle(10);
+vehicle.speedUp();
+vehicle.speedUp();
+console.log(vehicle.speed);
+vehicle.speedDown();
+console.log(vehicle.speed);
+vehicle.Info();
+
+class car extends Vehicle{
+    constructor(speed,wheels,seats){
+        super(speed);
+        t
+    }
+}

@@ -1,0 +1,31 @@
+//array 활용
+const fruits = ["Banana", "Orange", "Apple", "Mango"];
+fruits.sort();
+console.log(fruits);
+// Output: ["Apple", "Banana", "Mango", "Orange"]
+const numbers = [40, 100, 1, 5, 25, 10];
+numbers.sort();
+console.log(numbers);
+// Output: [1, 10, 100, 25, 40, 5] (incorrect for numbers)
+
+//sort 기본 오름차순
+//numbers 도 마찬가지로 sort함 => x
+//  n1- n2 => 오름차 반대 내림차
+numbers.sort(function (n1, n2) {
+  return n1 - n2;
+});
+console.log(numbers);
+numbers.sort((n1, n2) => n2 - n1);
+console.log(numbers);
+// 과일 가격으로 오름차 내림차 만들어보기
+const items = [
+  { name: "Apple", price: 50 },
+  { name: "Banana", price: 10 },
+  { name: "Mango", price: 30 },
+];
+items.sort((a, b) => a.price - b.price);
+console.log(items);
+items.sort((a, b) => b.price - a.price);
+console.log(items);
+items.sort((s1, s2) => s1.name?.localeCompare(s2.name));
+console.log(items);

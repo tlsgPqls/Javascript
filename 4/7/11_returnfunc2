@@ -1,0 +1,60 @@
+// return 뒤는 undefined
+function sayHello(name) {
+  console.log("함수 시작");
+  return;
+  console.log("실행안됨");
+}
+greeting = sayHello("RM");
+console.log(greeting);
+
+// 함수 학점 반환
+function sayHello1(score) {
+  console.log("학점 반환 시작");
+  if (score >= 90) {
+    console.log("A");
+  } else if (score >= 80 && score < 90);
+  {
+    console.log("B");
+  }
+}
+sayHello1(80);
+
+// 두 수와 연산자 사칙연산
+let newname;
+function calc(a, b, name) {
+  console.log("결과 반환중...");
+  let result = a * b;
+  console.log(name, result);
+  switch (name) {
+    case "hi":
+      newname = "edge";
+      break;
+    case "FF":
+      newname = "firefox";
+      break;
+    default:
+      newname = "None";
+      break;
+  }
+  console.log(`name is.. ${newname}`);
+}
+calc(1, 2, "hi");
+calc(3, 2, "FF");
+calc(4, 2, "dd");
+
+function cal(num1, op, num2) {
+  let result;
+  switch (op) {
+    case "+":
+      result = num1 + num2;
+      break;
+    default:
+      result = undefined;
+  }
+  return result;
+}
+//function(cal(num1,op,num2))
+{
+  //result = undefined;
+}
+console.log(calc(4, "+", 56777));

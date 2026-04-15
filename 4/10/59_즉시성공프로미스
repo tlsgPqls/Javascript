@@ -1,0 +1,14 @@
+//즉시 성공 Promise resolve then
+new Promise((resolve) => {
+  resolve(10);
+});
+Promise.resolve(10); //오토박싱 아니고 스태틱방식 위에꺼랑 똑같/즉시 성공 promise
+//함수가 promise를 반환하기 좋을때 쓰려고, 뒤에 then 쓰면 편하니깐
+
+function getData() {
+  return Promise.resolve("data");
+}
+getData().then(console.log);
+Promise.resolve(1)
+  .then((n) => n + 1)
+  .then(console.log);

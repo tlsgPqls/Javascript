@@ -1,0 +1,14 @@
+//function
+function sayHello() {
+  // 함수정의
+  console.log("Hello");
+}
+sayHello(); // 함수 호출
+function sayHello1(name) {
+  // 매개변수
+  console.log(`Hello ${name}`); // 매개변수 괄호 생략하면 안됌
+  // 매개변수 여러개면 쉼표써서
+}
+sayHello1("DIO");
+sayHello1("The world!!");
+sayHello(2);

@@ -1,0 +1,26 @@
+//클래스 상속 실습
+//car class Truck class
+class Car {
+  constructor(loadage) {
+    this.loadage = loadage;
+  }
+}
+class Truck extends Car {
+  constructor(loadage) {
+    super(loadage);
+    if (loadage) {
+      this.loadage = loadage;
+    }
+    this.loadage = 0;
+  }
+  load() {
+    console.log(" ====== loading.. ======");
+  }
+  unload() {
+    console.log(" ~~ Unload ~~");
+  }
+}
+const truck = new Truck(0);
+console.log(truck.loadage);
+truck.load();
+truck.unload();

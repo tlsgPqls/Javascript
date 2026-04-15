@@ -1,0 +1,9 @@
+for (let num = 0; num < 11; num++) {
+  let num1 = num % 2;
+  if (num1 === 0) {
+    console.log(num, num1);
+    continue;
+  }
+}
+
+// break 아무대나 쓰지말것

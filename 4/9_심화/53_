@@ -1,0 +1,34 @@
+console.log("1번");
+setTimeout(() => {
+  //브라우저한테 callback 하고 넘김 브라우저는 가지고있음
+  console.log("2번");
+}, 1000);
+console.log("3번");
+
+function asyncTest(name, callback) {
+  console.log("타이머 시작");
+  setTimeout(() => {
+    callback(name);
+  }, 3000);
+}
+function doOtherthing() {
+  for (let i = 0; i < 300; i++) {
+    console.log(`${i}번째 처리`);
+  }
+}
+let sayHello2 = function (name) {
+  return name;
+};
+console.log(sayHello2(`sayHello2`));
+function sayHello(name) {
+  //함수정의
+  console.log(`Hello ${name}`);
+}
+const sayHello1 = () => ({ name: "sayHello1" });
+
+asyncTest("다빈", (name) => {
+  console.log(`Hello ${name}`);
+});
+
+asyncTest("뷔", sayHello);
+doOtherthing();

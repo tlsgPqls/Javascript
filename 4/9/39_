@@ -1,0 +1,19 @@
+//로또 발생기
+
+//1~45 난수 발생시켜야함 -> 6개 뽑고 중복될 수 있고
+// array 는 몇개를 뽑아야할지 알 수 없음
+// 안에 들어있는지 체크
+// array item.length = 6
+// set 으로 하는게 제일 쉬움
+// 함수 사용
+// while
+function gen() {
+  let numbers = [];
+  do {
+    const num = Math.floor(Math.random() * 46) - 1;
+    if (!numbers.includes(num)) {
+      numbers.push(num);
+    }
+  } while (array.length < 46);
+  console.log(array.length);
+}

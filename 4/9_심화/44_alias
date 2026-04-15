@@ -1,0 +1,10 @@
+//alias - 별칭,별명
+// 앞 -속성이름 뒤- 할당하고싶은 변수명
+const user1 = {
+  name: "RM",
+  age: 30,
+};
+const { name: userName, age: userAge } = user1;
+console.log(userName);
+console.log(userAge);
+// 속성에 없는걸 치면 Undefined

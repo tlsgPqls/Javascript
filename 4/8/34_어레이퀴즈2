@@ -1,0 +1,14 @@
+const list = ["슈가", "차은우", "박서준", "이도현", "제이홉", "주우재", "지민"];
+const bts = ["진", "슈가", "제이홉", "RM", "지민", "뷔", "정국"];
+
+const result = list.filter((name) => bts.includes(name)).join(",");
+console.log(result);
+
+// 위와 동일
+if (bts.includes(name)) {
+  if (bts.includes(name)) {
+    return true;
+  } else {
+    return false;
+  }
+}

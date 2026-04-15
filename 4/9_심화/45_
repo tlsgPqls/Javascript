@@ -1,0 +1,10 @@
+// 계속 user을 달고다녀야하니까 귀찮아짐
+// 첫번째 함수를 호출하지 않고 매개변수 자리에다가 객체분해를 넣어버림
+function userInfo(user) {
+  console.log(`${user.name}-${user.age}`);
+}
+userInfo({ name: "RM", age: 30 }); //user1
+function printUser({ name, age }) {
+  console.log(`${name}-${age}`);
+}
+printUser({ name: "RM", age: 30 }); //user1

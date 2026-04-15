@@ -1,0 +1,12 @@
+//객체분해
+const user = {
+  name: "RM",
+  age: 30,
+};
+// 기존 방식
+const name1 = user.name;
+const age1 = user.age;
+// 객체 분해 방식
+const { name, age } = user;
+console.log(name1);
+console.log(age1);

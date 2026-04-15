@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list"></ul>
+    <button class="add">추가</button>
+    <script>
+      const list = document.querySelector(".list");
+      const btn = document.querySelector(".add");
+      async function fetchMovieData(url) {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error("요청에 실패. 상태 코드: " + response.status);
+        }
+        const data = await response.json();
+        return data;
+      }
+      function validateMovieData(data) {
+        if (!data.articleList || data.articleList.length === 0) {
+          throw new Error("데이터가 없습니다.");
+        }
+      }
+      function extractMovieInfos(articleList) {
+        return articleList.map((article, idx) => ({
+          title: article.title,
+          rank: idx + 1,
+        }));
+      }
+      function displayMovies(movieinfo) {
+        for (const movie of movieinfo) {
+          const li = document.createElement("li");
+          li.textContent = `[${movie.rank}위] ${movie.title}`;
+          list.appendChild(li);
+        }
+      }
+      async function movie() {
+        try {
+          const data = await fetchMovieData(url);
+          validateMovieData(data);
+          const movieinfo = extractMovieInfos(data.articleList);
+          displayMovies(movieinfo);
+        } catch (err) {
+          console.error("에러 발생:", err.message);
+        }
+      }
+      const url =
+        "http://raw.githubusercontent.com/wapj/jsbackend/main/movieinfo.json";
+
+      btn.addEventListener("click", movie);
+    </script>
+  </body>
+</html>
